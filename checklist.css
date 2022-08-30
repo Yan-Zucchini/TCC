@@ -4,132 +4,216 @@
     font-family:'Uchen', sans-serif;
     box-sizing: border-box;
   }
-  body {
-      margin: 0;
-      min-width: 250px;
-      background-color: #a6a5a570;
-      color: #000000;
-  }
-  .intro {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 0px;
-      margin-top: 50px;
-  }
-  h2 {
-    margin-top: 75px;
-  }
-  ul {
-      margin: 0;
-      padding: 0;
-  }
-  /* Estilizando os itens da lista */
-  ul li {
-      cursor: pointer;
-      position: relative;
-      padding: 12px 8px 12px 40px;
-      margin: 0 40px;
-      list-style-type: none;
-      background: transparent;
-      font-size: 18px;
-      transition: 0.2s;
-      /* faz os itens da lista serem inselecionaveis */
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      border: 1px solid #001D3D;
-      border-radius: 12px;
-  }
-      
-  
-  /* Escurece a cor do fundo */
-  ul li:hover {
-      background: #001d3d76;
-  }
-  /* adiciona uma cor de fundo quando clicado */
-  ul li.checked {
-      background: #001d3d76;
-      color: #000000;
-      text-decoration: line-through;
-  }
-  /* Adiciona uma marcaçao quando clicar */
-  ul li.checked::before {
-      content: "";
-      position: absolute;
-      border-color: #202020;
-      border-style: solid;
-      border-width: 0 2px 2px 0;
-      top: 18px;
-      left: 16px;
-      transform: rotate(45deg);
-      height: 15px;
-      width: 7px;
-  }
-  /* Personalizando o botão fechar */
-  .close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 12px 16px 12px 16px;
-      border-top-right-radius: 12px;
-      border-bottom-right-radius: 12px;
+  /*MENU*/
+  header{
+    position: fixed;
+    margin-top: -50;
+    background-color: #000814;
+    padding: 20px;
+    width: 100%;
+    height: 70px;
+}
+.mobile-menu{
+    cursor: pointer;
+}
+.mobile-menu div{
+    width: 29px;
+    height: 2px;
+    background: #fff;
+    margin: 5px;
+    margin-top: 3px;
+}
 
-  }
-  .close:hover {
-      background-color: #001d3d76;
-      color: #d9d9d9;
-  }
-  /* Personalizando o cabeçalho */
-  .card__todo {
-      margin: 5px;
-      background-color: transparent;
-      padding: 30px 40px;
-      color: rgb(0, 0, 0);
-      text-align: center;
-  }
-  /* limpando os floats depois do cabeçalho */
-  .card__todo:after {
-      content: "";
-      display: table;
-      clear: both;
-  }
-  /* Input */
-  input {
-      margin: 0;
-      border: none;
-      border-radius: 0;
-      width: 80%;
-      padding: 10px;
-      float: left;
-      font-size: 16px;
-      background-color: #001D3D;
-      color: #d9d9d9;
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
-      
-  }
-  ::placeholder {
-      color: #d9d9d9;
-  }
-  /* Botão "Add" */
-  .btn__add {
-      padding: 10px;
-      width: 20%;
-      background: #001d3d8c;
-      color: rgb(255, 255, 255);
-      float: left;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      border-radius: 0;
-      border-top-right-radius: 12px;
-      border-bottom-right-radius: 12px;
-      
-  }
-  .btn__add:hover {
-      background-color: #0061c98d
-  }
+.esquerda h3{
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+} 
+.esquerda span{
+    color: rgb(56, 102, 255);
+}
+.sidebar{
+    position:fixed;
+    width: 190px;
+    height: 100%;
+    margin-top: 20px;
+    padding-top: 30px;
+    left: 0;
+    background-color: #001D3D;
+    transition: 0.5s;
+    transition-property: left;
+}
+.sidebar .image{
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+}
+.sidebar h2{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.sidebar a{
+    color: white;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property:background ;
+}
+.sidebar a:hover{
+    background-color: rgb(31, 68, 190);
+}
+label #sidebar_btn{
+    position: fixed;
+    left: 300px;
+    color: white;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+label #sidebar_btn:hover{
+    color: rgb(31, 68, 190)
+}
+#check:checked ~ .sidebar{
+    left: -190px;
+}
+#check{
+    display: none;
+}
+/*MENU FIM*/
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+    background-color: #a6a5a570;
+    color: #000000;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0px;
+    margin-top: 50px;
+}
+h2 {
+margin-top: 75px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+/* Estilizando os itens da lista */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    margin: 0 40px;
+    list-style-type: none;
+    background: transparent;
+    font-size: 18px;
+    transition: 0.2s;
+    /* faz os itens da lista serem inselecionaveis */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #001D3D;
+    border-radius: 12px;
+}
+    
+
+/* Escurece a cor do fundo */
+ul li:hover {
+    background: #001d3d76;
+}
+/* adiciona uma cor de fundo quando clicado */
+ul li.checked {
+    background: #001d3d76;
+    color: #000000;
+    text-decoration: line-through;
+}
+/* Adiciona uma marcaçao quando clicar */
+ul li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #202020;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 18px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+/* Personalizando o botão fechar */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+.close:hover {
+    background-color: #001d3d76;
+    color: #d9d9d9;
+}
+/* Personalizando o cabeçalho */
+.card__todo {
+    margin: 5px;
+    background-color: transparent;
+    padding: 30px 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+/* limpando os floats depois do cabeçalho */
+.card__todo:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Input */
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 80%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    background-color: #001D3D;
+    color: #d9d9d9;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    
+}
+::placeholder {
+    color: #d9d9d9;
+}
+/* Botão "Add" */
+.btn__add {
+    padding: 10px;
+    width: 20%;
+    background: #001d3d8c;
+    color: rgb(255, 255, 255);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+}
+.btn__add:hover {
+    background-color: #0061c98d
+}
