@@ -3,7 +3,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Uchen', sans-serif;
-  }
+    }
 
 
 .menu{
@@ -12,8 +12,8 @@ z-index: 2;
 }
 .menu header{
     position: fixed;
-    margin-top: -342px;
-    margin-left: -155px;
+    margin-top: -366px;
+    margin-left: -175px;
     background-color: #000814;
     padding: 20px;
     width: 100%;
@@ -44,7 +44,7 @@ z-index: 2;
     position:fixed;
     width: 190px;
     height: 100%;
-    margin-top: -272px;
+    margin-top: -296px;
     padding-top: 30px;
     left: 0;
     background-color: #001D3D;
@@ -194,13 +194,14 @@ z-index: 2;
     transition: top 0.3s ease-in-out;
     border: 1px solid #ccc;
     border-radius: 10px;
-    z-index: 2;
+    z-index: 3;
     background-color: #fff;
   }
   
   .modal.active {
     top: 15%;
   }
+
   
   .modal .header {
     display: flex;
@@ -212,7 +213,7 @@ z-index: 2;
   }
   
   .modal .body {
-    padding: 0.75rem;
+    padding: 0.76rem;
   }
   
   #overlay {
