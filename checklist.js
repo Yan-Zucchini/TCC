@@ -7,8 +7,10 @@ function addNewTodo(event) {
   let t = document.createTextNode(inputTodo);
   li.appendChild(t);
   if (inputTodo === "") {
-    alert("Digite alguma tarefa!");
+    // alert("Digite alguma tarefa!");
+    erro.innerHTML=("Digite alguma tarefa!")
   } else {
+    erro.innerHTML=("")
     document.getElementById("ulTodo").appendChild(li);
   }
   document.getElementById("inputTodo").value = "";

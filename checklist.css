@@ -218,3 +218,10 @@ input {
 .btn__add:hover {
     background-color: #0061c98d
 }
+
+#erro{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
