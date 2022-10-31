@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Uchen', sans-serif;
+    }
+
+
+.menu{
+z-index: 2;
+
+}
+.menu header{
+    position: fixed;
+    margin-top: -366px;
+    margin-left: -175px;
+    background-color: #000814;
+    padding: 20px;
+    width: 100%;
+    height: 70px;
+}
+.menu .mobile-menu{
+    cursor: pointer;
+}
+.menu .mobile-menu div{
+    width: 29px;
+    height: 2px;
+    background: #fff;
+    margin: 5px;
+    margin-top: 3px;
+}
+
+.menu .esquerda h3{
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+} 
+.menu .esquerda span{
+    color: rgb(56, 102, 255);
+}
+.menu .sidebar{
+    position:fixed;
+    width: 190px;
+    height: 100%;
+    margin-top: -296px;
+    padding-top: 30px;
+    left: 0;
+    background-color: #001D3D;
+    transition: 0.5s;
+    transition-property: left;
+}
+.menu .sidebar .image{
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+}
+.menu .sidebar h2{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.menu .sidebar a{
+    color: white;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property:background ;
+}
+.menu .sidebar a:hover{
+    background-color: rgb(31, 68, 190);
+}
+.menu label #sidebar_btn{
+    position: fixed;
+    left: 300px;
+    color: white;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.menu label #sidebar_btn:hover{
+    color: rgb(31, 68, 190)
+}
+.menu #check:checked ~ .sidebar{
+    left: -190px;
+}
+.menu #check{
+    display: none;
+}
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .todo-container {
+    width: 1000px;
+    height: 80vh;
+    display: flex;
+  }
+  
+  .status {
+    width: 25%;
+    background-color: #f3f3f3;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+  }
+  
+  .status:nth-child(even) {
+    background-color: #e9e9e96b;
+  }
+  
+  .status h1 {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: #343434;
+    color: #f3f3f3;
+    margin: 0px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  
+  #add_btn {
+    padding: 0.5rem 1rem;
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    margin-top: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #add_btn:hover {
+    background-color: #aaa;
+  }
+  
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+      rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    margin-top: 30px;
+  }
+
+  
+  
+  .todo .close {
+    position: absolute;
+    right: 1rem;
+    top: 0rem;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .todo .close:hover {
+    color: #343444;
+  }
+  
+  /* modal */
+  
+  .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+  
+  .modal {
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 3;
+    background-color: #fff;
+  }
+  
+  .modal.active {
+    top: 15%;
+  }
+
+  
+  .modal .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .modal .body {
+    padding: 0.76rem;
+  }
+  
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  #overlay.active {
+    display: block;
+  }
+  
+  #todo_input,
+  #todo_submit {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+  }
+  
+  #todo_submit {
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+  }

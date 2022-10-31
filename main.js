@@ -28,7 +28,7 @@ function createWindow() {
   win.setAutoHideMenuBar(true);
 
   // carrega a janela com o conteúdo dentro de checklist.html
-  win.loadFile("checklist.html");
+  win.loadFile("./checklist/checklist.html");
 }
 
 /* Método vai ser chamado assim que o Electron finalizar sua inicialização

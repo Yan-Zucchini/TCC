@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.ml-auto{
+    display: flex;
+}
+.play{
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    clip-path: polygon(
+        0 0,
+        50% 25%,
+        50% 75%,
+        50% 75%,
+        50% 25%,
+        100% 50%,
+        100% 50%,
+        0 100%
+    );
+}
+
+.pause{
+    display: none;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    clip-path: polygon(
+        0 0,
+        40% 0,
+        40% 100%,
+        60% 100%,
+        60% 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+input{
+    width: 150px !important;
+    height: 150px !important;
+    font-size:  50pt !important;
+    text-align: center !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.time{
+    color: #ffffff;
+    text-align: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto !important;
+}
+
+h2{
+    font-size: 90pt;
+}
