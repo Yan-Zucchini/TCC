@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     box-sizing: border-box;
-    font-family: 'Uchen', sans-serif;
+    font-family: 'Roboto', sans-serif;
     }
+
+body{
+  background-color: #a6a5a570;
+}
 
 
 .menu{
@@ -18,7 +22,7 @@ z-index: 2;
     padding: 20px;
     width: 100%;
     height: 70px;
-}
+} 
 .menu .mobile-menu{
     cursor: pointer;
 }
@@ -102,6 +106,7 @@ z-index: 2;
   }
   
   .todo-container {
+    margin-top: 50px;
     width: 1000px;
     height: 80vh;
     display: flex;
@@ -123,7 +128,7 @@ z-index: 2;
     text-align: center;
     top: 0;
     left: 0;
-    background-color: #343434;
+    background-color: #001D3D;
     color: #f3f3f3;
     margin: 0px;
     width: 100%;
@@ -132,7 +137,8 @@ z-index: 2;
   
   #add_btn {
     padding: 0.5rem 1rem;
-    background-color: #ccc;
+    color: white;
+    background-color: #001d3d8c;
     outline: none;
     border: none;
     width: 100%;
@@ -144,7 +150,7 @@ z-index: 2;
   }
   
   #add_btn:hover {
-    background-color: #aaa;
+    background-color: #0061c98d;
   }
   
   .todo {
@@ -167,7 +173,7 @@ z-index: 2;
   .todo .close {
     position: absolute;
     right: 1rem;
-    top: 0rem;
+    top: 3px;
     font-size: 2rem;
     color: #ccc;
     cursor: pointer;
@@ -238,7 +244,7 @@ z-index: 2;
   }
   
   #todo_submit {
-    background-color: #4caf50;
+    background-color: #001D3D;
     color: #f3f3f3;
     font-size: 1.25rem;
     border: none;

@@ -8,34 +8,53 @@
     <link rel="stylesheet" href="./pomodoro.css">
     <title>Pomodoro</title>
 </head>
-<body class="bg-dark">
+<body style="background-color: #a6a5a570;">
 
-    <nav class="navbar navbar-expand-lg bg-danger">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-white" href="pomodoro.html"> Timer Pomodoro</a>
-    <div class="ml-auto">
-        <a onclick="pausar()">
-        <div class="pause" id="pause">
-            
-        </div></a>
-        <a onclick="executar()">
-        <div class="play" id="play">
-            
-        </div></a>
+    <div class="menu">
+        <input type="checkbox" id="check">
+        <header>
 
-        <audio id="lofi" src="./audio/lo-fi.mp3" type="audio/mpeg"></audio>
+            <label for="check">
+                <div id="sidebar_btn">
+                    <div class="mobile-menu">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </label>
+            <div class="esquerda">
+                <h3>Remind <span>Me</span></h3>
+            </div>
+
+            <div class="ml-auto" id="midia">
+                <a onclick="pausar()"><div class="pause" id="pause"></div></a>
+                <a onclick="executar()"><div class="play" id="play"></div></a>
+
+                <audio id="lofi" src="./audio/lo-fi.mp3" type="audio/mpeg"></audio>
+            </div>
+
+        </header>
+        <!--Começo da sidebar-->
+        <div class="sidebar">
+            <center>
+                <img src="../build/icon.jpeg" class="image" alt="">
+                <h2>Remind Me</h2>
+            </center>
+            <a href="../checklist/checklist.html"><span>Checklist</span></a>
+            <a href="../kanban/kanban.html"><span>KanBan</span></a>
+            <a href="../pomodoro/pomodoro.html"><span>Pomodoro</span></a>
+        </div>
     </div>
-</nav>
 
-<!-- Container -->
+    <!-- Container -->
 
-    <div class="container">
+    <div class="container" id="container">
         
         <!-- Config -->
         <div class="row d-flex justify-content-center mt-5 mb-5">
 
             <div class="col-md-8">
-
 
                 <div id="config" class="row d-flex justify-content-center">
 
@@ -43,27 +62,27 @@
 
                         <!--inputs-->
 
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center" id="quadrado">
                             <div class="col-md-3">
                                 <div class="mb-3">
-                                    <label for="acao" class="d-flex justify-content-center text-white fw-bold">Ação</label>
-                                    <input type="number" class="form-control form-control-lg bg-dark border-0 shadow text-white" id="acao">
+                                    <label for="acao" class="d-flex justify-content-center text-black fw-bold">Ação</label>
+                                    <input type="number" class="form-control form-control-lg border-0 shadow text-white" id="acao" style="background-color: #001D3D ;">
                                     <small class="text-danger" id="erro_acao"></small>
                                 </div>
 
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3">
-                                    <label for="pausa" class="d-flex justify-content-center text-white fw-bold">Pausa</label>
-                                    <input type="number" class="form-control form-control-lg bg-dark border-0 shadow text-white" id="pausa">
+                                    <label for="pausa" class="d-flex justify-content-center text-black fw-bold">Pausa</label>
+                                    <input type="number" class="form-control form-control-lg border-0 shadow text-white" id="pausa" style="background-color: #001D3D ;">
                                     <small class="text-danger" id="erro_pausa"></small>
                                 </div>
 
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3">
-                                    <label for="sessoes" class="d-flex justify-content-center text-white fw-bold">Sessões</label>
-                                    <input type="number" class="form-control form-control-lg bg-dark border-0 shadow text-white" id="sessoes">
+                                    <label for="sessoes" class="d-flex justify-content-center text-black fw-bold">Sessões</label>
+                                    <input type="number" class="form-control form-control-lg border-0 shadow text-white" id="sessoes" style="background-color: #001D3D ;">
                                     <small class="text-danger" id="erro_sessoes"></small>
                                 </div>
 
@@ -74,22 +93,19 @@
                         <!--Botao iniciar-->
                         <div class="row mt-5 mb-5 d-flex justify-content-center">
                             <div class="col-md-9 d-grid gap-2">
-                                <button onclick="iniciar()" class="btn btn-danger shadow btn-lg" type="button">iniciar</button>
+                                <button onclick="iniciar()" class="btn shadow btn-lg" type="button" style="background-color: #001d3d8c ; color: white;">iniciar</button>
                             </div>
                         </div>
-                        <!--/Botao iniciar-->
+                        <!--/Botao iniciar-->                        
                     </div>
-
                 </div>
-
-                
             </div>
             
         </div>
         <!-- /Config -->    
         <!--Timer -->    
 
-        <div id="timer" class="mt-0 d-flex justify-content-center" style="display: none;">
+        <div id="timer" class="mt-0 d-flex justify-content-center" style="display: none; ">
 
             <div class="row mb-3">
                 <div class="col">
@@ -103,7 +119,7 @@
                 </div>
 
                 <div class="col-1 p-0 d-flex justify-content-center">
-                    <h2>:</h2>
+                    <h2 id="divisao">:</h2>
                 </div>
 
                 <div class="col-5 pl-0">
@@ -124,10 +140,10 @@
         <!-- Finalização-->
 
         <div id="fim" style="display:none;">
-            <h1 class="text-success text-center">Parabéns! Você finalizou suas tarefas.</h1>
+            <h1 class="text-success text-center">Parabéns! Você finalizou suas tarefas</h1>
             <div class="row mt-5 mb-5 d-flex justify-content-center">
                 <div class="col-md-9 d-flex justify-content-center">
-                    <a href="./pomodoro.html" class="btn btn-danger shadow btn-lg text-white ">Inincio</a>
+                    <a href="./pomodoro.html" class="btn shadow btn-lg text-white " style="background-color: #001d3d8c ;">Inincio</a>
                 </div>
             </div>
         </div>
